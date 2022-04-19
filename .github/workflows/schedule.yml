@@ -1,0 +1,16 @@
+name: "Scheduled Command - ping site - end of each day"
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  pinger_job:
+    name: A job to ping
+    runs-on: ubuntu-latest
+    env:
+      URL: ${{ secrets.URL }}
+      METHOD: GET  # the method used to make the request. It is GET by default
+    steps:
+      - id: ping
+        uses: sisodiya2421/pinger@fcf5ae8830434ce4cb827ce4649ac5ce020f2dff
