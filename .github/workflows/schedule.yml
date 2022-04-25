@@ -1,8 +1,8 @@
 name: "Scheduled Command - ping site - end of each day"
 
-on:
-  schedule:
-    - cron: "0 0 * * *"
+on: [push]
+  # schedule:
+# - cron: "0 0 * * *"
 
 jobs:
   pinger_job:
